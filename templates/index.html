@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Details</title>
+    <style>
+      body {
+        background-color: rgb(208, 241, 150);
+      }
+      .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        text-align: center;
+        color: rgb(12, 18, 198);
+      }
+      .error-msg {
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      "
+    >
+      <p class="heading">Add Employee Details</p>
+
+      <form action="/submit" method="POST">
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          placeholder="Enter first name"
+          required
+        />
+        <br /><br />
+
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder="Enter last name"
+          required
+        />
+        <br /><br />
+
+        <label for="phoneno">Phone No</label>
+        <input
+          type="text"
+          name="phoneno"
+          id="phoneno"
+          placeholder="Enter phone no"
+          required
+        />
+        <br /><br />
+
+        <label for="location">Location</label>
+        <input
+          type="text"
+          name="location"
+          id="location"
+          placeholder="Enter location"
+          required
+        />
+        <br /><br />
+
+        <input type="submit" value="Submit" />
+
+        {% if error %}
+        <div class="error-msg">{{ error }}</div>
+        {% endif %}
+      </form>
+
+      <br />
+      <a href="/api"><button type="button">View API JSON Data</button></a>
+    </div>
+  </body>
+</html>
