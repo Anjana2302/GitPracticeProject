@@ -51,6 +51,27 @@ def submit():
 def success_page():
     return render_template('success.html')
 
+@app.route('/submittodoitem',methods=['POST'])
+def submittodoitem():
+    form_data=dict(request.form)
+    try:
+        #Connect and insert in mongodb atlas
+        MONGODB_URI = os.getenv('MONGODB_URI')
+
+        # Create a new client and connect to the server
+        client = MongoClient(MONGODB_URI, server_api=ServerApi('1'))
+        db = client['GitAssignmentDb']
+        collection = db['Git-assignment']
+
+        #insert data
+        collection.insert_one(form_data)
+        client.close()
+
+        #On success: redirect to success page
+        return redirect(url_for('success_page'))
+    except Exception as e:
+        #On error: render form page again displaying error message
+        return render_template('index.html',error=f"DataBase Error: {str(e)}")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8000,debug=True)
