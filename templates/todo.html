@@ -35,12 +35,20 @@
       <p class="heading">Add To-Do Item</p>
 
       <form action="/submittodoitem" method="POST">
+        <label for="itemId">Item ID:</label>
+        <input
+          type="text"
+          id="itemId"
+          name="itemId"
+          placeholder="Enter Item ID"
+        /><br /><br />
+
         <label for="itemName">Item Name:</label>
         <input
           type="text"
           name="itemName"
           id="itemName"
-          placeholder="Enter item name"
+          placeholder="Enter Item Name"
           required
         />
         <br /><br />
@@ -49,7 +57,7 @@
         <textarea
           name="itemDescription"
           id="itemDescription"
-          placeholder="Enter item description"
+          placeholder="Enter Item Description"
           required
         ></textarea>
         <br /><br />
