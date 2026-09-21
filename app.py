@@ -51,6 +51,9 @@ def submit():
 def success_page():
     return render_template('success.html')
 
+@app.route('/todo_item', methods=['GET'])
+def todo_page():
+    return render_template('todo.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8000,debug=True)
