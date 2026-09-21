@@ -6,5 +6,6 @@
   {"id": 5, "name": "Ranjana", "role": "Developer"},
   {"id": 6, "name": "Maruti", "role": "DevOps Engineer"},
   {"id": 7, "name": "Jwala", "role": "CA"},
-  {"id": 8, "name": "Jay", "role": "Python Engineer"}
+  {"id": 8, "name": "Jay", "role": "Python Engineer"},
+  {"id": 9, "name": "Yogi", "role": "Python Engineer"}
 ]
